@@ -1,30 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 func main() {
-	// const (
-	// 	red   = 0
-	// 	green = 1
-	// 	blue  = 2
-	// )
+	// num := 20
+	// if num%2 == 0 {
+	// 	fmt.Println("Even")
+	// } else {
+	// 	fmt.Println("Odd")
+	// }
 
-	// const (
-	// 	red = iota + 1
-	// 	green
-	// 	blue
-	// )
-
-	// fmt.Println(red, green, blue)
-
-	const (
-		sun = iota + 1
-		mon
-		tue
-		_
-		_
-		_
-		sat
-	)
-	fmt.Println(sun, mon, tue, sat)
+	if os := runtime.GOOS; os == "darwin" {
+		fmt.Println("You is macos 🖥")
+	} else if os == "windows" {
+		fmt.Println("You is window 😎")
+	} else {
+		fmt.Println("You is linux 👨‍💻 ?")
+	}
 }
