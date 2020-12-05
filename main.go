@@ -1,28 +1,31 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
+
+type user struct {
+	name string
+	age  uint
+}
+
+type article struct {
+	title   string
+	excerpt string
+	body    string
+	author  user
+}
 
 func main() {
-	a, ok := strconv.ParseFloat("3.14", 64)
-	fmt.Println("a", a, "ok:", ok)
+	// u := user{"Somechai", 21}
+	// u := user{name: "John", age: 21}
+	// u.age = 22
 
-	e, ok := strconv.ParseInt("0110", 2, 64) // second parameter  is set number unit
-	fmt.Println("e", e, "ok:", ok)
+	a := article{
+		// title:   "test ",
+		// excerpt: "Excerpt",
+		author: user{name: "John", age: 21},
+	}
 
-	e2, ok := strconv.ParseInt("120", 10, 64)
-	fmt.Println("e2", e2, "ok:", ok)
+	a.title = "The Title"
 
-	i, ok := strconv.ParseUint("124", 10, 64)
-	fmt.Println("i", i, "ok:", ok)
-
-	o, ok := strconv.Atoi("65")
-	fmt.Println("o", o, "ok:", ok)
-
-	w := strconv.Itoa(65)
-
-	fmt.Println("w", w, "ok:", ok)
-
+	fmt.Printf("%+v", a)
 }
