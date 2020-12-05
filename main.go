@@ -2,29 +2,33 @@ package main
 
 import "fmt"
 
-type user struct {
-	name string
-	age  uint
+type enrollment struct {
+	semaster string
+	courses  []string
 }
 
-type article struct {
-	title   string
-	excerpt string
-	body    string
-	user
+// method receiver as value receiver
+func (e enrollment) courseAt(index uint) string {
+	return e.courses[index]
+}
+
+// method receiver as pointer receiver
+func (e *enrollment) addCourse(course string) {
+	e.courses = append(e.courses, course)
+
 }
 
 func main() {
+	e := enrollment{semaster: "1/63", courses: []string{"Java", "C#"}}
 
-	a := article{
-		title:   "test ",
-		excerpt: "Excerpt",
-		body:    "string",
-		user:    user{name: "John", age: 21},
-	}
+	// e.courses = append(e.courses, "C++", "Javascript")
 
-	a.title = "The Title"
+	// equal (&e).addCourse("Golang") because golang complier smart and auto convert
+	(e).addCourse("Golang")
 
-	fmt.Printf("%+v", a)
-	fmt.Printf("%+v", a.age) // promote filed can call field user
+	result := e.courseAt(0)
+	fmt.Println("index ::", result)
+
+	fmt.Printf("%+v", e)
+
 }
