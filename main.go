@@ -3,25 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	courses := []string{
-		"Java",
-		"C++",
-		"Python",
-	}
+	// []byte, byte = unit8 (0 - 255)
+	str := "Hello World"
+	firstLetter := str[0]
+	fmt.Println(firstLetter) // ASCII => H
 
-	for k, v := range courses {
-		fmt.Println("k", k, " v : ", v)
-	}
+	// we cannot set variable str[0] = "A" because It is byte
 
-	fmt.Println("-----------------")
-	credits := map[string]int{
-		"Java":   3,
-		"C++":    3,
-		"Python": 3,
-	}
+	fmt.Println("after convert : ", string(firstLetter))
+	fmt.Println("len", len(str))
 
-	for k, v := range credits {
-		fmt.Println("k", k, " v : ", v)
+	for i := 0; i < len(str); i++ {
+		fmt.Println(string(str[i]))
 	}
 
 }
