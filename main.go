@@ -3,16 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	// array type
-	arr := [5]string{"A", "B", "C", "D", "E"}
+	words := []string{"Hello", "Hi", "Bye", "Thailand", "Japan"}
+	fmt.Println("1 words ::", words)
 
-	// slice type
-	result := arr[2:4]
+	// Append new value to slice
+	words = append(words, "Go")
+	fmt.Println("2 append words ::", words)
 
-	// arr[0] = "X"
-	result[0] = "M" // ☝️ in case  slice not equal  arr
+	// Remove value  on index => 2(Bye)
+	// {"Hello", "Hi"} + {"Thailand", "Japan"}
 
-	fmt.Println("arr ::", arr)
-	fmt.Println("result ::", result)
-
+	// words = append(words[:2], "Thailand", "Japan")
+	words = append(words[:2], words[3:]...) // spread operator
+	fmt.Println("3 remove words ::", words)
 }
