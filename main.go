@@ -2,18 +2,17 @@ package main
 
 import "fmt"
 
-// func inc(num int) int {
-// 	return num + 1
-// }
-
-func inc(num *int) {
-	*num = *num + 1
-}
-
 func main() {
-	i := 20
-	fmt.Println("first i ", i)
-	inc(&i)
-	fmt.Println("seconds i ", i)
+	// array type
+	arr := [5]string{"A", "B", "C", "D", "E"}
+
+	// slice type
+	result := arr[2:4]
+
+	// arr[0] = "X"
+	result[0] = "M" // ☝️ in case  slice not equal  arr
+
+	fmt.Println("arr ::", arr)
+	fmt.Println("result ::", result)
 
 }
