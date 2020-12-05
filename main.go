@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type generator interface {
 	generate()
@@ -19,4 +21,9 @@ func main() {
 	var gen generator
 	gen = &pdf{content: "My PDF"}
 	gen.generate()
+
+	for n := 1; n <= 10; n++ {
+		fmt.Println(n)
+	}
+
 }
