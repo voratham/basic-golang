@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-// 0x1111 20
+// func inc(num int) int {
+// 	return num + 1
+// }
+
+func inc(num *int) {
+	*num = *num + 1
+}
+
 func main() {
-	// i := 20
-	// fmt.Println(i, &i)
 	i := 20
-	var p *int
+	fmt.Println("first i ", i)
+	inc(&i)
+	fmt.Println("seconds i ", i)
 
-	p = &i
-
-	fmt.Println("[1] point ::", p, "print point real val :", *p)
-
-	i = 30
-
-	fmt.Println("[2] point ::", p, "print point real val :", *p)
 }
