@@ -1,23 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"runtime"
-)
+import "fmt"
 
 func main() {
-	// num := 20
-	// if num%2 == 0 {
-	// 	fmt.Println("Even")
-	// } else {
-	// 	fmt.Println("Odd")
+	// for n := 1; n <= 10; n++ {
+	// 	fmt.Println("n = ", n)
 	// }
 
-	if os := runtime.GOOS; os == "darwin" {
-		fmt.Println("You is macos 🖥")
-	} else if os == "windows" {
-		fmt.Println("You is window 😎")
-	} else {
-		fmt.Println("You is linux 👨‍💻 ?")
+	// while loop ?
+	// n := 1
+	// for n <= 10 {
+	// 	fmt.Println("n = ", n)
+	// 	n = n + 1
+	// }
+
+	// loop forever
+	for {
+		fmt.Println("Hello")
 	}
+
 }
