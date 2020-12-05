@@ -11,21 +11,20 @@ type article struct {
 	title   string
 	excerpt string
 	body    string
-	author  user
+	user
 }
 
 func main() {
-	// u := user{"Somechai", 21}
-	// u := user{name: "John", age: 21}
-	// u.age = 22
 
 	a := article{
-		// title:   "test ",
-		// excerpt: "Excerpt",
-		author: user{name: "John", age: 21},
+		title:   "test ",
+		excerpt: "Excerpt",
+		body:    "string",
+		user:    user{name: "John", age: 21},
 	}
 
 	a.title = "The Title"
 
 	fmt.Printf("%+v", a)
+	fmt.Printf("%+v", a.age) // promote filed can call field user
 }
