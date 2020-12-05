@@ -2,16 +2,27 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"strconv"
 )
 
 func main() {
-	// result := strings.Contains("BabelCoder", "bel")
-	// result := strings.Count("สวัสดี โชคดีนะ", "ดี")
-	// result := strings.HasPrefix("Hello World", "Hell")
-	// result := strings.HasSuffix("Hello World", "ld")
-	// result := strings.Join([]string{"สวัสดี", "ชาวโลก"}, "-")
-	result := strings.ToUpper("hello")
+	a, ok := strconv.ParseFloat("3.14", 64)
+	fmt.Println("a", a, "ok:", ok)
 
-	fmt.Println("result ::", result)
+	e, ok := strconv.ParseInt("0110", 2, 64) // second parameter  is set number unit
+	fmt.Println("e", e, "ok:", ok)
+
+	e2, ok := strconv.ParseInt("120", 10, 64)
+	fmt.Println("e2", e2, "ok:", ok)
+
+	i, ok := strconv.ParseUint("124", 10, 64)
+	fmt.Println("i", i, "ok:", ok)
+
+	o, ok := strconv.Atoi("65")
+	fmt.Println("o", o, "ok:", ok)
+
+	w := strconv.Itoa(65)
+
+	fmt.Println("w", w, "ok:", ok)
+
 }
