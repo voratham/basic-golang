@@ -1,26 +1,26 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
-func findIndex(s []int, num int) (int, error) {
-	for i, n := range s {
-		if n == num {
-			return i, nil
+func f() {
+	panic("from f")
+}
+
+func g() {
+	f()
+}
+
+func h() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(r, "Recover")
+
 		}
-	}
-	errorMsg := "Number not found index " + strconv.Itoa(num)
-	return 0, errors.New(errorMsg)
+	}()
+
+	g()
 }
 
 func main() {
-	i, err := findIndex([]int{1, 2, 3}, 20)
-	if err != nil {
-		fmt.Println("err :", err)
-	} else {
-		fmt.Println("index :", i)
-	}
+	h()
 }
