@@ -3,7 +3,7 @@
 basic golang by learn myself by commit
 
 
-
+```shell
  1 Init project setting
  2 example declare variable
  3 const and iota declare
@@ -34,6 +34,7 @@ basic golang by learn myself by commit
  28 Handler error on go
  29 Panic & Recover pattern
  30 Gorouting and channel exmaple
+ ```
  
 
 ```shell
