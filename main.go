@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"course-go/shape"
+	"fmt"
+)
 
 func main() {
-	// var s interface{}
-	result := []interface{}{"A", false, 10}
-	fmt.Println(result)
+
+	circle := shape.Circle{Radius: 10}
+	fmt.Printf("%+v", circle.Area())
 
 }
